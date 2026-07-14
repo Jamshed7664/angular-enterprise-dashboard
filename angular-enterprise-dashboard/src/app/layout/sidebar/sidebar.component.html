@@ -13,7 +13,7 @@
 
         @if (!collapsed()) {
           <div class="brand-copy">
-            <h1>AxionOps</h1>
+            <h1>AxionOps</h1> 
             <p>Enterprise command center</p>
           </div>
         }
@@ -54,6 +54,15 @@
         }
       </a>
 
+      <a routerLink="/users" routerLinkActive="active" class="nav-item">
+        <span class="nav-icon">👥</span>
+        @if (!collapsed()) {
+          <span class="nav-copy">
+            <strong>Users</strong>
+            <small>Exports and board packs</small>
+          </span>
+        }
+      </a>
       <a routerLink="/reports" routerLinkActive="active" class="nav-item">
         <span class="nav-icon">📁</span>
         @if (!collapsed()) {

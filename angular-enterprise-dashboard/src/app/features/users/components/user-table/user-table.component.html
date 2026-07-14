@@ -1,0 +1,56 @@
+<div class="table-card">
+  <div class="table-head">
+    <div>
+      <p class="eyebrow">User directory</p>
+      <h2>Assigned people and platform access</h2>
+    </div>
+    <span class="table-meta">{{ users.length }} rows</span>
+  </div>
+
+  <div class="table-wrap">
+    <table>
+      <thead>
+        <tr>
+          <th>User</th>
+          <th>Role</th>
+          <th>Team</th>
+          <th>Status</th>
+          <th>Last active</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        @for (user of users; track user.id) {
+          <tr>
+            <td>
+              <div class="user-cell">
+                <span class="avatar">{{ user.avatar }}</span>
+                <div>
+                  <strong>{{ user.name }}</strong>
+                  <p>{{ user.email }}</p>
+                </div>
+              </div>
+            </td>
+            <td><span class="role-pill">{{ user.role }}</span></td>
+            <td>
+              <strong>{{ user.team }}</strong>
+              <p>{{ user.title }}</p>
+            </td>
+            <td>
+              <button type="button" class="status-pill" [class.inactive]="user.status === 'inactive'" (click)="toggleStatus.emit(user)">
+                {{ user.status }}
+              </button>
+            </td>
+            <td>{{ user.lastActive | date: 'mediumDate' }}</td>
+            <td>
+              <div class="action-row">
+                <button type="button" class="ghost-btn" (click)="editUser.emit(user)">Edit</button>
+                <button type="button" class="ghost-btn danger" (click)="deleteUser.emit(user)">Delete</button>
+              </div>
+            </td>
+          </tr>
+        }
+      </tbody>
+    </table>
+  </div>
+</div>

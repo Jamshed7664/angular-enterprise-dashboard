@@ -1,0 +1,81 @@
+<section class="users-page">
+  <div class="hero-panel">
+    <div>
+      <p class="eyebrow">Identity and access</p>
+      <h1>User command center</h1>
+      <p>Manage platform users, assign roles, review access state, and keep operations clean across teams.</p>
+    </div>
+    <button type="button" class="primary-cta" (click)="openCreateDialog()">Add user</button>
+  </div>
+
+  <div class="toolbar-panel" [formGroup]="filtersForm">
+    <label class="search-box">
+      <span>Search</span>
+      <input type="search" formControlName="search" placeholder="Search by name, email, role, or team" />
+    </label>
+
+    <label class="select-box">
+      <span>Role</span>
+      <select formControlName="role">
+        <option value="">All roles</option>
+        <option value="admin">Admin</option>
+        <option value="manager">Manager</option>
+        <option value="analyst">Analyst</option>
+        <option value="developer">Developer</option>
+      </select>
+    </label>
+
+    <label class="select-box">
+      <span>Status</span>
+      <select formControlName="status">
+        <option value="">All status</option>
+        <option value="active">Active</option>
+        <option value="inactive">Inactive</option>
+      </select>
+    </label>
+
+    <button type="button" class="secondary-cta" (click)="resetFilters()">Reset</button>
+  </div>
+
+  <div class="stats-grid">
+    <article class="stat-card">
+      <span>Total users</span>
+      <strong>{{ totalUsers() }}</strong>
+      <p>Visible through current data source</p>
+    </article>
+    <article class="stat-card">
+      <span>Current page</span>
+      <strong>{{ page() }}</strong>
+      <p>Server-driven list segment</p>
+    </article>
+    <article class="stat-card">
+      <span>Page size</span>
+      <strong>{{ limit() }}</strong>
+      <p>Users requested per API call</p>
+    </article>
+  </div>
+
+  @if (loading()) {
+    <div class="loading-state">Loading users...</div>
+  } @else {
+    <app-user-table
+      [users]="users()"
+      (editUser)="openEditDialog($event)"
+      (deleteUser)="removeUser($event)"
+      (toggleStatus)="toggleUserStatus($event)"
+    />
+  }
+
+  <div class="pagination-bar">
+    <button type="button" class="page-btn" (click)="changePage(page() - 1)" [disabled]="page() === 1">Previous</button>
+    <span>Page {{ page() }} of {{ totalPages() }}</span>
+    <button type="button" class="page-btn" (click)="changePage(page() + 1)" [disabled]="page() === totalPages()">Next</button>
+  </div>
+</section>
+
+<app-user-form-dialog
+  [visible]="dialogOpen()"
+  [user]="selectedUser()"
+  (closeDialog)="closeDialog()"
+  (submitUser)="saveUser($event)"
+/>

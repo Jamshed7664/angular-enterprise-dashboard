@@ -1,0 +1,143 @@
+.table-card {
+    border-radius: 1.5rem;
+    background: var(--dashboard-panel-bg);
+    border: 1px solid var(--dashboard-inner-border);
+    box-shadow: var(--shadow-sm);
+    overflow: hidden;
+}
+
+.table-head {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    padding: 1.25rem 1.25rem 0;
+}
+
+.table-head h2 {
+    margin: 0.15rem 0 0;
+    color: var(--text-primary);
+}
+
+.table-meta {
+    padding: 0.45rem 0.75rem;
+    border-radius: 999px;
+    background: var(--surface-secondary);
+    color: var(--text-secondary);
+    font-size: 0.85rem;
+}
+
+.table-wrap {
+    overflow-x: auto;
+    padding: 1rem 1.25rem 1.25rem;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th,
+td {
+    padding: 1rem 0.85rem;
+    text-align: left;
+    border-bottom: 1px solid var(--table-row-border);
+}
+
+th {
+    color: var(--table-heading);
+    font-size: 0.78rem;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+}
+
+td {
+    color: var(--text-secondary);
+}
+
+.user-cell {
+    display: flex;
+    align-items: center;
+    gap: 0.85rem;
+}
+
+.user-cell strong {
+    display: block;
+    color: var(--text-primary);
+}
+
+.user-cell p,
+td p {
+    margin: 0.18rem 0 0;
+    color: var(--text-muted);
+    font-size: 0.88rem;
+}
+
+.avatar {
+    width: 42px;
+    height: 42px;
+    display: grid;
+    place-items: center;
+    border-radius: 14px;
+    background: linear-gradient(135deg, var(--sidebar-brand-start), var(--sidebar-brand-end));
+    color: white;
+    font-weight: 800;
+}
+
+.role-pill,
+.status-pill {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 36px;
+    padding: 0.35rem 0.75rem;
+    border-radius: 999px;
+    font-size: 0.8rem;
+    font-weight: 700;
+    text-transform: capitalize;
+}
+
+.role-pill {
+    background: var(--role-bg);
+    border: 1px solid var(--role-border);
+    color: var(--role-text);
+}
+
+.status-pill {
+    border: 1px solid var(--success-border);
+    background: var(--success-soft);
+    color: var(--kpi-trend-up);
+}
+
+.status-pill.inactive {
+    border-color: var(--warning-border);
+    background: var(--warning-soft);
+    color: var(--warning-text);
+}
+
+.action-row {
+    display: flex;
+    gap: 0.5rem;
+}
+
+.ghost-btn {
+    min-height: 36px;
+    padding: 0.5rem 0.85rem;
+    border-radius: 0.85rem;
+    border: 1px solid var(--border-color);
+    background: var(--surface-secondary);
+    color: var(--text-primary);
+}
+
+.ghost-btn.danger {
+    color: #ef4444;
+}
+
+.eyebrow {
+    margin: 0;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    font-size: 0.72rem;
+    color: var(--sidebar-eyebrow);
+    font-weight: 700;
+}

@@ -1,0 +1,126 @@
+{
+  "users": [
+    {
+      "id": "1",
+      "name": "Aarav Sharma",
+      "email": "aarav@axionops.com",
+      "role": "admin",
+      "team": "Platform Ops",
+      "title": "Director of Operations",
+      "status": "active",
+      "lastActive": "2026-07-10",
+      "avatar": "AS"
+    },
+    {
+      "id": "2",
+      "name": "Diya Kapoor",
+      "email": "diya@axionops.com",
+      "role": "manager",
+      "team": "Customer Success",
+      "title": "Success Manager",
+      "status": "active",
+      "lastActive": "2026-07-12",
+      "avatar": "DK"
+    },
+    {
+      "id": "3",
+      "name": "Vivaan Mehta",
+      "email": "vivaan@axionops.com",
+      "role": "analyst",
+      "team": "Revenue Intelligence",
+      "title": "Business Analyst",
+      "status": "inactive",
+      "lastActive": "2026-07-04",
+      "avatar": "VM"
+    },
+    {
+      "id": "4",
+      "name": "Anaya Verma",
+      "email": "anaya@axionops.com",
+      "role": "developer",
+      "team": "Platform Engineering",
+      "title": "Frontend Developer",
+      "status": "active",
+      "lastActive": "2026-07-13",
+      "avatar": "AV"
+    },
+    {
+      "id": "5",
+      "name": "Kabir Singh",
+      "email": "kabir@axionops.com",
+      "role": "manager",
+      "team": "Delivery Excellence",
+      "title": "Delivery Manager",
+      "status": "active",
+      "lastActive": "2026-07-09",
+      "avatar": "KS"
+    },
+    {
+      "id": "6",
+      "name": "Myra Joshi",
+      "email": "myra@axionops.com",
+      "role": "analyst",
+      "team": "Insights Lab",
+      "title": "Data Analyst",
+      "status": "inactive",
+      "lastActive": "2026-07-03",
+      "avatar": "MJ"
+    },
+    {
+      "id": "7",
+      "name": "Ishaan Rao",
+      "email": "ishaan@axionops.com",
+      "role": "developer",
+      "team": "Core Apps",
+      "title": "Angular Developer",
+      "status": "active",
+      "lastActive": "2026-07-11",
+      "avatar": "IR"
+    },
+    {
+      "id": "8",
+      "name": "Sara Khan",
+      "email": "sara@axionops.com",
+      "role": "admin",
+      "team": "Security Office",
+      "title": "Access Administrator",
+      "status": "active",
+      "lastActive": "2026-07-12",
+      "avatar": "SK"
+    },
+    {
+      "id": "9",
+      "name": "Rohan Patel",
+      "email": "rohan@axionops.com",
+      "role": "manager",
+      "team": "Renewals",
+      "title": "Renewal Lead",
+      "status": "active",
+      "lastActive": "2026-07-08",
+      "avatar": "RP"
+    },
+    {
+      "name": "Nitya Arora",
+      "email": "nitya@axionops.com",
+      "role": "developer",
+      "team": "UX Systems",
+      "title": "UI Engineer",
+      "status": "inactive",
+      "lastActive": "2026-07-01",
+      "avatar": "NA",
+      "id": "10"
+    },
+    {
+      "name": "Jamshed ",
+      "email": "jamshed7664@gmail.com",
+      "role": "manager",
+      "team": "Platform ops",
+      "title": "Operation manager",
+      "status": "active",
+      "lastActive": "2026-07-14",
+      "avatar": "AU",
+      "id": "Pjh10YdrhXY"
+    }
+  ],
+  "$schema": "./node_modules/json-server/schema.json"
+}

@@ -19,6 +19,10 @@ path: 'login',
         loadComponent: () => import('./features/dashboard/pages/overview/dashboard-overview.component').then((m) => m.DashboardOverviewComponent)
       },
       {
+        path: 'users',
+        loadChildren: () => import('./features/users/users.routes').then(m => m.USERS_ROUTES)
+      },
+      {
         path: 'admin',
         canActivate: [roleGuard],
         data: { roles: ['admin'] },
