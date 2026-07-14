@@ -11,14 +11,14 @@
     display: flex;
     flex-direction: column;
     gap: 1rem;
-    color: #dbe7f3;
+    color: var(--sidebar-text);
     background:
-        radial-gradient(circle at top left, rgba(34, 197, 94, 0.16), transparent 22%),
-        radial-gradient(circle at bottom right, rgba(6, 182, 212, 0.16), transparent 24%),
-        linear-gradient(180deg, #081120 0%, #0f172a 42%, #111827 100%);
-    border-right: 1px solid rgba(148, 163, 184, 0.12);
-    box-shadow: inset -1px 0 0 rgba(255, 255, 255, 0.03);
-    transition: width 0.25s ease, padding 0.25s ease;
+        radial-gradient(circle at top left, var(--sidebar-accent-glow-1), transparent 22%),
+        radial-gradient(circle at bottom right, var(--sidebar-accent-glow-2), transparent 24%),
+        linear-gradient(180deg, var(--sidebar-bg-top) 0%, var(--sidebar-bg-mid) 42%, var(--sidebar-bg-bottom) 100%);
+    border-right: 1px solid var(--sidebar-border);
+    box-shadow: inset -1px 0 0 var(--sidebar-divider);
+    transition: width 0.25s ease, padding 0.25s ease, background-color 0.25s ease;
     overflow: hidden;
 }
 
@@ -48,7 +48,7 @@
 }
 
 .sidebar-nav::-webkit-scrollbar-thumb {
-    background: rgba(148, 163, 184, 0.2);
+    background: var(--sidebar-scroll-thumb);
     border-radius: 999px;
 }
 
@@ -64,14 +64,23 @@
     padding: 0.9rem;
     border-radius: 1.15rem;
     color: inherit;
-    background: rgba(255, 255, 255, 0.04);
-    border: 1px solid rgba(148, 163, 184, 0.12);
-    transition: all 0.2s ease;
+    background: var(--sidebar-surface);
+    border: 1px solid var(--sidebar-surface-border);
+    transition:
+        background-color 0.2s ease,
+        border-color 0.2s ease,
+        transform 0.2s ease,
+        box-shadow 0.2s ease;
 }
 
 .brand-toggle:hover {
-    background: rgba(255, 255, 255, 0.08);
-    border-color: rgba(56, 189, 248, 0.3);
+    background: var(--sidebar-surface-hover);
+    border-color: var(--sidebar-brand-border-hover);
+}
+
+.brand-toggle:focus-visible {
+    outline: 2px solid var(--brand-secondary);
+    outline-offset: 2px;
 }
 
 .brand-mark {
@@ -81,13 +90,13 @@
     border-radius: 16px;
     display: grid;
     place-items: center;
-    background: linear-gradient(135deg, #22c55e, #06b6d4);
-    box-shadow: 0 14px 30px rgba(6, 182, 212, 0.22);
+    background: linear-gradient(135deg, var(--sidebar-brand-start), var(--sidebar-brand-end));
+    box-shadow: 0 14px 30px var(--sidebar-brand-shadow);
 }
 
 .brand-mark-inner {
     font-weight: 800;
-    color: white;
+    color: #ffffff;
     font-size: 1.05rem;
 }
 
@@ -101,17 +110,17 @@
     margin: 0;
     font-size: 1rem;
     font-weight: 700;
-    color: #f8fbff;
+    color: var(--sidebar-heading);
 }
 
 .brand-copy p {
     margin: 0.2rem 0 0;
-    color: #8aa0b8;
+    color: var(--sidebar-text-muted);
     font-size: 0.78rem;
 }
 
 .toggle-icon {
-    color: #8aa0b8;
+    color: var(--sidebar-text-muted);
     font-size: 0.95rem;
 }
 
@@ -119,14 +128,15 @@
 .insight-card {
     border-radius: 1.2rem;
     padding: 1rem;
-    background: linear-gradient(180deg, rgba(255, 255, 255, 0.07), rgba(255, 255, 255, 0.04));
-    border: 1px solid rgba(148, 163, 184, 0.14);
+    background: var(--sidebar-elevated-surface);
+    border: 1px solid var(--sidebar-surface-border);
+    // backdrop-filter: blur(12px);
 }
 
 .workspace-card h2,
 .insight-card h3 {
     margin: 0 0 0.45rem;
-    color: #f8fbff;
+    color: var(--sidebar-heading);
 }
 
 .workspace-card h2 {
@@ -136,7 +146,7 @@
 .workspace-card p,
 .insight-card p {
     margin: 0;
-    color: #94a9be;
+    color: var(--sidebar-text-soft);
     font-size: 0.86rem;
     line-height: 1.5;
 }
@@ -146,7 +156,7 @@
     text-transform: uppercase;
     letter-spacing: 0.12em;
     font-size: 0.68rem;
-    color: #67e8f9;
+    color: var(--sidebar-eyebrow);
     font-weight: 700;
 }
 
@@ -158,7 +168,7 @@
 .nav-group-title {
     margin: 0 0 0.35rem;
     padding-inline: 0.65rem;
-    color: #7f93a8;
+    color: var(--sidebar-group-title);
     font-size: 0.72rem;
     font-weight: 700;
     letter-spacing: 0.08em;
@@ -172,23 +182,27 @@
     min-height: 56px;
     padding: 0.85rem 0.9rem;
     border-radius: 1rem;
-    color: #dbe7f3;
+    color: var(--sidebar-text);
     text-decoration: none;
     background: transparent;
     border: 1px solid transparent;
-    transition: all 0.2s ease;
+    transition:
+        background-color 0.2s ease,
+        border-color 0.2s ease,
+        transform 0.2s ease,
+        color 0.2s ease;
 }
 
 .nav-item:hover {
-    background: rgba(255, 255, 255, 0.06);
-    border-color: rgba(148, 163, 184, 0.14);
+    background: var(--sidebar-nav-hover);
+    border-color: var(--sidebar-nav-hover-border);
     transform: translateX(2px);
 }
 
 .nav-item.active {
-    background: linear-gradient(135deg, rgba(8, 145, 178, 0.24), rgba(34, 197, 94, 0.18));
-    border-color: rgba(34, 211, 238, 0.28);
-    box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.03);
+    background: var(--sidebar-nav-active-bg);
+    border-color: var(--sidebar-nav-active-border);
+    box-shadow: inset 0 0 0 1px var(--sidebar-nav-active-inner);
 }
 
 .nav-icon {
@@ -198,7 +212,7 @@
     display: grid;
     place-items: center;
     border-radius: 12px;
-    background: rgba(255, 255, 255, 0.06);
+    background: var(--sidebar-icon-bg);
     font-size: 1rem;
 }
 
@@ -209,13 +223,13 @@
 }
 
 .nav-copy strong {
-    color: #f8fbff;
+    color: var(--sidebar-heading);
     font-size: 0.94rem;
     font-weight: 600;
 }
 
 .nav-copy small {
-    color: #89a0b6;
+    color: var(--sidebar-text-muted);
     font-size: 0.76rem;
     margin-top: 0.1rem;
 }
@@ -234,8 +248,8 @@
     justify-content: center;
     padding: 0.34rem 0.55rem;
     border-radius: 999px;
-    background: rgba(34, 197, 94, 0.16);
-    color: #86efac;
+    background: var(--sidebar-badge-bg);
+    color: var(--sidebar-badge-text);
     font-size: 0.72rem;
     font-weight: 700;
 }
@@ -245,10 +259,16 @@
     width: 100%;
     min-height: 42px;
     border-radius: 0.9rem;
-    background: linear-gradient(135deg, #0891b2, #0f766e);
-    color: #fff;
+    background: linear-gradient(135deg, var(--sidebar-cta-start), var(--sidebar-cta-end));
+    color: #ffffff;
     font-weight: 600;
     border: none;
+    transition: transform 0.2s ease, filter 0.2s ease;
+}
+
+.insight-btn:hover {
+    transform: translateY(-1px);
+    filter: brightness(1.05);
 }
 
 .support-link {
@@ -258,9 +278,15 @@
     display: flex;
     align-items: center;
     gap: 0.7rem;
-    color: #d7e5f4;
-    background: rgba(255, 255, 255, 0.05);
-    border: 1px solid rgba(148, 163, 184, 0.12);
+    color: var(--sidebar-text);
+    background: var(--sidebar-surface);
+    border: 1px solid var(--sidebar-surface-border);
+    transition: background-color 0.2s ease, border-color 0.2s ease;
+}
+
+.support-link:hover {
+    background: var(--sidebar-surface-hover);
+    border-color: var(--sidebar-nav-hover-border);
 }
 
 .profile-panel {
@@ -269,8 +295,8 @@
     gap: 0.75rem;
     padding: 0.8rem;
     border-radius: 1rem;
-    background: rgba(255, 255, 255, 0.06);
-    border: 1px solid rgba(148, 163, 184, 0.12);
+    background: var(--sidebar-surface);
+    border: 1px solid var(--sidebar-surface-border);
 }
 
 .avatar {
@@ -280,8 +306,8 @@
     border-radius: 14px;
     display: grid;
     place-items: center;
-    background: linear-gradient(135deg, #1e293b, #334155);
-    color: #fff;
+    background: linear-gradient(135deg, var(--sidebar-avatar-start), var(--sidebar-avatar-end));
+    color: #ffffff;
     font-weight: 700;
 }
 
@@ -293,12 +319,12 @@
 .profile-copy h3 {
     margin: 0;
     font-size: 0.92rem;
-    color: #f8fbff;
+    color: var(--sidebar-heading);
 }
 
 .profile-copy p {
     margin: 0.15rem 0 0;
-    color: #8ea3b8;
+    color: var(--sidebar-text-muted);
     font-size: 0.78rem;
 }
 
@@ -306,8 +332,9 @@
     width: 36px;
     height: 36px;
     border-radius: 10px;
-    color: #b9c9d8;
-    background: rgba(255, 255, 255, 0.05);
+    color: var(--sidebar-text-soft);
+    background: var(--sidebar-action-bg);
+    border: 1px solid transparent;
 }
 
 .sidebar-panel.collapsed .brand-toggle,
@@ -326,7 +353,7 @@
         height: auto;
         width: 100%;
         border-right: none;
-        border-bottom: 1px solid rgba(148, 163, 184, 0.12);
+        border-bottom: 1px solid var(--sidebar-border);
     }
 
     .sidebar-panel.collapsed {

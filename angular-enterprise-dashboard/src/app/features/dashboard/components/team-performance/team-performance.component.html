@@ -4,11 +4,12 @@
       <p class="eyebrow">Execution quality</p>
       <h3>Team performance</h3>
     </div>
-    <button type="button" class="btn btn-sm btn-outline-secondary">Export CSV</button>
+
+    <button type="button" class="export-btn">Export CSV</button>
   </div>
 
   <div class="table-responsive">
-    <table class="table align-middle mb-0">
+    <table class="performance-table table align-middle mb-0">
       <thead>
         <tr>
           <th>Team</th>
@@ -17,12 +18,13 @@
           <th>Revenue</th>
         </tr>
       </thead>
+
       <tbody>
         @for (team of teams(); track team.team) {
           <tr>
             <td>
               <strong>{{ team.team }}</strong>
-              <div class="text-muted small">Cross-functional operating initiative</div>
+              <div class="table-subtext">Cross-functional operating initiative</div>
             </td>
             <td>{{ team.owner }}</td>
             <td>

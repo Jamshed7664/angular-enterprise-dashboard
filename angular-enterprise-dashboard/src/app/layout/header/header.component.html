@@ -1,14 +1,35 @@
 <header class="header-bar">
-  <div>
+  <div class="header-copy">
     <p class="page-kicker">Enterprise visibility</p>
-    <h2>Welcome back, {{ currentUser()?.name }}</h2>
+    <h2>Welcome back, {{ displayName() }}</h2>
   </div>
+
   <div class="header-actions">
     <div class="search-box">
-      <span>⌕</span>
+      <span class="search-icon">⌕</span>
       <input type="text" placeholder="Search teams, reports, or alerts" />
     </div>
-    <span class="role-pill">{{ roleLabel() }}</span>
-    <button class="btn btn-outline-light action-btn" type="button" (click)="logout()">Logout</button>
+
+    <div class="topbar-utilities">
+      <app-notification-center></app-notification-center>
+
+      <button
+        type="button"
+        class="theme-toggle-btn"
+        (click)="toggleTheme()"
+        [attr.aria-label]="isDarkTheme() ? 'Switch to light mode' : 'Switch to dark mode'">
+        <span>{{ isDarkTheme() ? '☀️' : '🌙' }}</span>
+        <span>{{ isDarkTheme() ? 'Light' : 'Dark' }}</span>
+      </button>
+
+      <span class="role-pill">{{ roleLabel() }}</span>
+
+      <button
+        class="btn action-btn logout-btn"
+        type="button"
+        (click)="logout()">
+        Logout
+      </button>
+    </div>
   </div>
 </header>

@@ -1,47 +1,122 @@
 .panel-card {
-    background: #fff;
-    border-radius: 1.25rem;
     padding: 1.1rem;
-    border: 1px solid rgba(148, 163, 184, .18);
-    box-shadow: 0 15px 35px rgba(15, 23, 42, .05);
+    border-radius: 1.25rem;
+    background: var(--dashboard-panel-bg);
+    border: 1px solid var(--border-color);
+    box-shadow: var(--shadow-sm);
+    color: var(--text-primary);
 }
 
 .section-head {
     display: flex;
     justify-content: space-between;
+    align-items: flex-start;
     gap: 1rem;
-    align-items: start;
     margin-bottom: 1rem;
 }
 
 .eyebrow {
-    margin: 0 0 .3rem;
-    text-transform: uppercase;
-    letter-spacing: .1em;
-    font-size: .72rem;
-    color: #0891b2;
+    margin: 0 0 0.3rem;
+    font-size: 0.72rem;
     font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--brand-secondary);
+}
+
+.section-head h3 {
+    margin: 0;
+    color: var(--text-primary);
+}
+
+.export-btn {
+    min-height: 36px;
+    padding: 0.45rem 0.85rem;
+    border: 1px solid var(--border-color);
+    border-radius: 10px;
+    background: var(--surface-primary);
+    color: var(--text-primary);
+    font-size: 0.82rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.25s ease;
+}
+
+.export-btn:hover {
+    transform: translateY(-1px);
+    border-color: var(--border-strong);
+}
+
+.performance-table {
+    --bs-table-bg: transparent;
+    --bs-table-color: var(--text-primary);
+    --bs-table-border-color: var(--table-row-border);
+    margin-bottom: 0;
+}
+
+.performance-table thead th {
+    padding-top: 0.4rem;
+    padding-bottom: 0.85rem;
+    border-bottom: 1px solid var(--table-row-border);
+    color: var(--table-heading);
+    font-size: 0.82rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    background: transparent;
+}
+
+.performance-table tbody td {
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    vertical-align: middle;
+    color: var(--text-primary);
+    border-bottom: 1px solid var(--table-row-border);
+    background: transparent;
+}
+
+.performance-table tbody tr:last-child td {
+    border-bottom: none;
+}
+
+.performance-table strong {
+    color: var(--text-primary);
+}
+
+.table-subtext,
+small {
+    color: var(--text-muted);
+}
+
+.table-subtext {
+    margin-top: 0.25rem;
+    font-size: 0.82rem;
 }
 
 .progress-slim {
-    height: .55rem;
+    height: 0.55rem;
+    margin-bottom: 0.35rem;
+    overflow: hidden;
     border-radius: 999px;
-    background: #e2e8f0;
-    margin-bottom: .35rem;
+    background: var(--progress-track);
 }
 
 .progress-bar {
-    background: linear-gradient(90deg, #06b6d4, #22c55e);
+    height: 100%;
     border-radius: 999px;
+    background: var(--progress-fill);
 }
 
-th {
-    color: #475569;
-    font-size: .82rem;
-    text-transform: uppercase;
-    letter-spacing: .05em;
+.table-responsive {
+    border-radius: 1rem;
 }
 
-small {
-    color: #64748b;
+@media (max-width: 767.98px) {
+    .section-head {
+        flex-direction: column;
+    }
+
+    .export-btn {
+        width: 100%;
+    }
 }

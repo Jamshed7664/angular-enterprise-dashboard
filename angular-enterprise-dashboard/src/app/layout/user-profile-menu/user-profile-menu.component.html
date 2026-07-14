@@ -1,0 +1,47 @@
+<div class="user-menu" (click)="onMenuClick($event)">
+  <button
+    type="button"
+    class="user-trigger"
+    aria-label="Open user menu"
+    (click)="toggleMenu($event)">
+    <span class="avatar">{{ initials() }}</span>
+
+    <div class="user-meta">
+      <strong>{{ currentUser()?.name }}</strong>
+      <span>{{ currentUser()?.role }}</span>
+    </div>
+
+    <span class="trigger-arrow">⌄</span>
+  </button>
+
+  @if (isOpen()) {
+    <div class="user-dropdown">
+      <div class="user-dropdown-head">
+        <span class="avatar large">{{ initials() }}</span>
+
+        <div class="user-dropdown-copy">
+          <strong>{{ currentUser()?.name }}</strong>
+          <span>{{ currentUser()?.email || 'team@enterprise.com' }}</span>
+          <small>{{ currentUser()?.role }}</small>
+        </div>
+      </div>
+
+      <div class="user-dropdown-links">
+        <button type="button" class="menu-item" (click)="goToProfile()">
+          <span>👤</span>
+          <span>Profile</span>
+        </button>
+
+        <button type="button" class="menu-item" (click)="goToSettings()">
+          <span>⚙</span>
+          <span>Settings</span>
+        </button>
+
+        <button type="button" class="menu-item logout-item" (click)="logout()">
+          <span>⇠</span>
+          <span>Logout</span>
+        </button>
+      </div>
+    </div>
+  }
+</div>

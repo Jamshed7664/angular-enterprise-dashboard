@@ -1,34 +1,53 @@
 .kpi-card {
-    background: #fff;
-    border-radius: 1.25rem;
     padding: 1.1rem;
-    border: 1px solid rgba(148, 163, 184, .18);
-    box-shadow: 0 15px 35px rgba(15, 23, 42, .05);
+    border-radius: 1.25rem;
+    background: var(--dashboard-panel-bg);
+    border: 1px solid var(--border-color);
+    box-shadow: var(--shadow-sm);
+    color: var(--text-primary);
+    transition:
+        transform 0.25s ease,
+        border-color 0.25s ease,
+        box-shadow 0.25s ease,
+        background-color 0.25s ease;
+}
+
+.kpi-card:hover {
+    transform: translateY(-2px);
+    border-color: var(--border-strong);
 }
 
 .kpi-card p {
-    margin: 0 0 .75rem;
-    color: #475569;
+    margin: 0 0 0.75rem;
+    color: var(--text-secondary);
     font-weight: 600;
+    font-size: 0.92rem;
 }
 
 .kpi-card h3 {
-    margin: 0 0 .65rem;
-    color: #0f172a;
+    margin: 0 0 0.65rem;
+    color: var(--text-primary);
     font-size: 1.8rem;
+    line-height: 1.1;
 }
 
 .delta-row {
     display: flex;
     flex-direction: column;
-    gap: .2rem;
-    color: #15803d;
+    gap: 0.2rem;
+    color: var(--kpi-trend-up);
 }
 
 .delta-row.down {
-    color: #b45309;
+    color: var(--kpi-trend-down);
+}
+
+.delta-row span {
+    font-size: 0.92rem;
+    font-weight: 700;
 }
 
 .delta-row small {
-    color: #64748b;
+    color: var(--text-muted);
+    font-size: 0.82rem;
 }

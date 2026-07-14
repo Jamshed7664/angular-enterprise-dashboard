@@ -1,77 +1,181 @@
 .header-bar {
-    display: flex;
-    justify-content: space-between;
-    gap: 1rem;
-    align-items: center;
-    padding: 1rem 1.25rem;
-    // border-radius: 1.25rem;
-    background: rgba(15, 23, 42, 0.92);
-    color: #f8fafc;
-    margin-bottom: 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.5rem;
+  padding: 1.25rem 1.5rem;
+  border-radius: 24px;
+  background: var(--header-gradient);
+  color: var(--text-primary);
+  border: 1px solid var(--border-color);
+  box-shadow: var(--shadow-md);
+}
+
+.header-copy {
+  min-width: 0;
 }
 
 .page-kicker {
-    margin: 0 0 .25rem;
-    text-transform: uppercase;
-    letter-spacing: .12em;
-    font-size: .72rem;
-    color: #67e8f9;
+  margin: 0 0 0.35rem;
+  font-size: 0.78rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--text-muted);
 }
 
 .header-bar h2 {
-    margin: 0;
-    font-size: 1.25rem;
+  margin: 0;
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: var(--text-primary);
 }
 
 .header-actions {
-    display: flex;
-    gap: .75rem;
-    align-items: center;
-    flex-wrap: wrap;
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+  flex-wrap: wrap;
+  justify-content: flex-end;
 }
 
 .search-box {
-    display: flex;
-    align-items: center;
-    gap: .5rem;
-    min-width: 280px;
-    padding: .7rem .85rem;
-    border-radius: .9rem;
-    background: rgba(255, 255, 255, .08);
+  min-width: 320px;
+  height: 46px;
+  padding: 0 0.95rem;
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+  border-radius: 14px;
+  background: var(--card-glass);
+  border: 1px solid var(--border-color);
+  box-shadow: var(--shadow-sm);
+}
+
+.search-icon {
+  color: var(--text-muted);
+  font-size: 1rem;
 }
 
 .search-box input {
-    background: transparent;
-    border: none;
-    outline: none;
-    color: white;
-    width: 100%;
+  width: 100%;
+  border: none;
+  outline: none;
+  background: transparent;
+  color: var(--input-text);
+  font-size: 0.95rem;
 }
 
 .search-box input::placeholder {
-    color: #bfdbfe;
+  color: var(--input-placeholder);
+}
+
+.topbar-utilities {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+}
+
+.theme-toggle-btn {
+  min-height: 46px;
+  padding: 0.75rem 1rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.55rem;
+  border: 1px solid var(--border-color);
+  border-radius: 14px;
+  background: var(--card-glass);
+  color: var(--text-primary);
+  font-size: 0.9rem;
+  font-weight: 600;
+  cursor: pointer;
+  box-shadow: var(--shadow-sm);
+  transition: all 0.25s ease;
+}
+
+.theme-toggle-btn:hover {
+  transform: translateY(-1px);
+  border-color: var(--border-strong);
 }
 
 .role-pill {
-    padding: .5rem .8rem;
-    border-radius: 999px;
-    background: rgba(34, 197, 94, .16);
-    color: #bbf7d0;
-    font-size: .8rem;
-    font-weight: 700;
+  min-height: 46px;
+  padding: 0.65rem 0.95rem;
+  display: inline-flex;
+  align-items: center;
+  border-radius: 999px;
+  background: var(--role-bg);
+  border: 1px solid var(--role-border);
+  color: var(--role-text);
+  font-weight: 700;
+  font-size: 0.82rem;
+  letter-spacing: 0.04em;
 }
 
 .action-btn {
-    border-radius: .9rem;
+  min-height: 46px;
+  padding: 0.72rem 1rem;
+  border: 1px solid var(--border-color);
+  border-radius: 12px;
+  background: var(--surface-primary);
+  color: var(--text-primary);
+  font-weight: 600;
+  box-shadow: var(--shadow-sm);
+  transition: all 0.25s ease;
+}
+
+.action-btn:hover {
+  transform: translateY(-1px);
+  border-color: var(--border-strong);
+}
+
+.logout-btn {
+  background: transparent;
+  color: var(--text-primary);
 }
 
 @media (max-width: 991.98px) {
-    .header-bar {
-        flex-direction: column;
-        align-items: stretch;
-    }
+  .header-bar {
+    flex-direction: column;
+    align-items: stretch;
+  }
 
-    .search-box {
-        min-width: unset;
-    }
+  .header-actions {
+    width: 100%;
+    justify-content: stretch;
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .topbar-utilities {
+    width: 100%;
+    justify-content: stretch;
+  }
+
+  .search-box {
+    min-width: 100%;
+  }
+
+  .theme-toggle-btn,
+  .role-pill,
+  .action-btn {
+    justify-content: center;
+  }
+}
+
+@media (max-width: 575.98px) {
+  .header-bar {
+    padding: 1rem;
+    border-radius: 20px;
+  }
+
+  .header-bar h2 {
+    font-size: 1.3rem;
+  }
+
+  .topbar-utilities {
+    flex-direction: column;
+    align-items: stretch;
+  }
 }

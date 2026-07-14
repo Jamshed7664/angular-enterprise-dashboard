@@ -9,7 +9,7 @@ import { AuthStore } from '../../core/store/auth.store';
   standalone: true,
   imports: [CommonModule, RouterLink, RouterLinkActive],
   templateUrl: './sidebar.component.html',
-  styleUrl: './sidebar.component.scss'
+  styleUrls: ['./sidebar.component.scss']
 })
 export class SidebarComponent {
   private readonly dashboardStore = inject(DashboardStore);

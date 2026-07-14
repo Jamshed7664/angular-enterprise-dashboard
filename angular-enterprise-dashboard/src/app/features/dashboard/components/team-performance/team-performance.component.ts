@@ -5,7 +5,7 @@ import { TeamMetric } from '../../../../core/models/dashboard.model';
   selector: 'app-team-performance',
   standalone: true,
   templateUrl: './team-performance.component.html',
-  styleUrl: './team-performance.component.scss'
+  styleUrls: ['./team-performance.component.scss']
 })
 export class TeamPerformanceComponent {
   readonly teams = input.required<TeamMetric[]>();

@@ -11,9 +11,17 @@ import { QuickActionsComponent } from '../../components/quick-actions/quick-acti
 @Component({
   selector: 'app-dashboard-overview',
   standalone: true,
-  imports: [CommonModule, PageHeaderComponent, KpiCardComponent, RevenueChartComponent, ActivityFeedComponent, TeamPerformanceComponent, QuickActionsComponent],
+  imports: [
+    CommonModule,
+    PageHeaderComponent,
+    KpiCardComponent,
+    RevenueChartComponent,
+    ActivityFeedComponent,
+    TeamPerformanceComponent,
+    QuickActionsComponent
+  ],
   templateUrl: './dashboard-overview.component.html',
-  styleUrl: './dashboard-overview.component.scss'
+  styleUrls: ['./dashboard-overview.component.scss']
 })
 export class DashboardOverviewComponent {
   readonly dashboardStore = inject(DashboardStore);

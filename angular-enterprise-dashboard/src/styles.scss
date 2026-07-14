@@ -1,1 +1,304 @@
-/* You can add global styles to this file, and also import other style files */
+:root {
+    color-scheme: light;
+
+    --app-bg: #f3f6fb;
+    --page-bg: var(--app-bg);
+    --surface-primary: #ffffff;
+    --surface-secondary: #f8fafc;
+    --text-primary: #0f172a;
+    --text-secondary: #475569;
+    --text-muted: #64748b;
+    --input-text: #0f172a;
+    --input-placeholder: #94a3b8;
+
+    --border-color: rgba(15, 23, 42, 0.08);
+    --border-strong: rgba(15, 23, 42, 0.16);
+
+    --shadow-sm: 0 8px 24px rgba(15, 23, 42, 0.06);
+    --shadow-md: 0 16px 40px rgba(15, 23, 42, 0.12);
+
+    --header-gradient:
+        radial-gradient(circle at top left, rgba(37, 99, 235, 0.12), transparent 32%),
+        linear-gradient(135deg, #ffffff 0%, #f8fafc 55%, #eef4ff 100%);
+
+    --card-glass: rgba(255, 255, 255, 0.84);
+
+    --role-bg: rgba(37, 99, 235, 0.1);
+    --role-border: rgba(37, 99, 235, 0.2);
+    --role-text: #1d4ed8;
+
+    /* Dashboard specific */
+    --dashboard-panel-bg: linear-gradient(180deg, #ffffff 0%, #f8fbff 100%);
+    --dashboard-subtle-bg: #f8fafc;
+    --dashboard-inner-border: rgba(148, 163, 184, 0.14);
+    --dashboard-feature-glow: rgba(6, 182, 212, 0.12);
+
+    --success-soft: rgba(34, 197, 94, 0.12);
+    --success-border: rgba(34, 197, 94, 0.16);
+
+    --warning-soft: #fff7ed;
+    --warning-border: rgba(249, 115, 22, 0.16);
+    --warning-text: #c2410c;
+
+    --danger-soft: #fff1f2;
+    --danger-border: rgba(244, 63, 94, 0.16);
+
+    --info-soft: #eff6ff;
+    --info-border: rgba(59, 130, 246, 0.16);
+
+    /* Activity feed */
+    --pill-success-bg: #ecfeff;
+    --pill-success-border: rgba(20, 184, 166, 0.18);
+    --pill-success-text: #0f766e;
+
+    --action-tile-hover-bg: #f1f5f9;
+
+    /* Revenue chart */
+    --chart-line: #0891b2;
+    --chart-fill: rgba(8, 145, 178, 0.12);
+    --chart-point-bg: #0f172a;
+    --chart-point-border: #ffffff;
+    --chart-grid: rgba(148, 163, 184, 0.18);
+    --chart-tick: #64748b;
+    --chart-tooltip-bg: #ffffff;
+    --chart-tooltip-text: #0f172a;
+    --chart-tooltip-border: rgba(148, 163, 184, 0.18);
+    --range-btn-text: #334155;
+    --range-btn-active-bg: #0f172a;
+    --range-btn-active-text: #ffffff;
+
+    /* Team performance table */
+    --table-heading: #475569;
+    --table-row-border: rgba(148, 163, 184, 0.16);
+
+    --progress-track: #e2e8f0;
+    --progress-fill: linear-gradient(90deg, #06b6d4, #22c55e);
+    --kpi-trend-up: #15803d;
+    --kpi-trend-down: #b45309;
+
+    /* Sidebar */
+    --sidebar-bg-top: #f8fbff;
+    --sidebar-bg-mid: #eef5fb;
+    --sidebar-bg-bottom: #e8f1f8;
+    --sidebar-text: #1e293b;
+    --sidebar-heading: #0f172a;
+    --sidebar-text-muted: #5f7388;
+    --sidebar-text-soft: #6b7f94;
+    --sidebar-group-title: #6b7f94;
+    --sidebar-eyebrow: #0891b2;
+    --sidebar-border: rgba(148, 163, 184, 0.18);
+    --sidebar-divider: rgba(255, 255, 255, 0);
+    --sidebar-surface: rgba(255, 255, 255, 0.72);
+    --sidebar-surface-hover: rgba(255, 255, 255, 0.92);
+    --sidebar-elevated-surface: rgba(255, 255, 255, 0.7);
+    --sidebar-surface-border: rgba(148, 163, 184, 0.18);
+    --sidebar-nav-hover: rgba(255, 255, 255, 0.84);
+    --sidebar-nav-hover-border: rgba(14, 165, 233, 0.18);
+    --sidebar-nav-active-bg: linear-gradient(135deg, rgba(8, 145, 178, 0.12), rgba(34, 197, 94, 0.12));
+    --sidebar-nav-active-border: rgba(8, 145, 178, 0.26);
+    --sidebar-nav-active-inner: rgba(255, 255, 255, 0.22);
+    --sidebar-icon-bg: rgba(255, 255, 255, 0.75);
+    --sidebar-scroll-thumb: rgba(100, 116, 139, 0.25);
+    --sidebar-brand-start: #22c55e;
+    --sidebar-brand-end: #06b6d4;
+    --sidebar-brand-shadow: rgba(6, 182, 212, 0.2);
+    --sidebar-brand-border-hover: rgba(8, 145, 178, 0.22);
+    --sidebar-accent-glow-1: rgba(34, 197, 94, 0.1);
+    --sidebar-accent-glow-2: rgba(6, 182, 212, 0.12);
+    --sidebar-badge-bg: rgba(34, 197, 94, 0.14);
+    --sidebar-badge-text: #15803d;
+    --sidebar-cta-start: #0891b2;
+    --sidebar-cta-end: #0f766e;
+    --sidebar-avatar-start: #cbd5e1;
+    --sidebar-avatar-end: #94a3b8;
+    --sidebar-action-bg: rgba(255, 255, 255, 0.72);
+
+    --login-bg:
+            radial-gradient(circle at top left, rgba(34, 197, 94, 0.18), transparent 24%),
+            radial-gradient(circle at right, rgba(6, 182, 212, 0.15), transparent 22%),
+            linear-gradient(135deg, #eff6ff 0%, #f8fafc 55%, #ecfeff 100%);
+    
+        --login-hero-badge-bg: #0f172a;
+        --login-hero-badge-text: #e0f2fe;
+    
+        --login-title: #0f172a;
+        --login-copy: #334155;
+        --login-card-bg: rgba(255, 255, 255, 0.78);
+        --login-card-border: rgba(148, 163, 184, 0.2);
+        --login-card-shadow: 0 25px 60px rgba(15, 23, 42, 0.08);
+    
+        --login-eyebrow: #0891b2;
+    
+        --login-persona-bg: #ffffff;
+        --login-persona-border: rgba(148, 163, 184, 0.24);
+        --login-persona-title: #0f172a;
+        --login-persona-copy: #475569;
+        --login-persona-role: #0369a1;
+        --login-persona-active-border: #0ea5e9;
+        --login-persona-active-ring: 0 0 0 4px rgba(14, 165, 233, 0.12);
+    
+        --login-btn-bg: linear-gradient(135deg, #0f172a, #0891b2);
+        --login-btn-text: #ffffff;
+}
+
+[data-theme='dark'] {
+    color-scheme: dark;
+    --login-bg:
+            radial-gradient(circle at top left, rgba(34, 197, 94, 0.14), transparent 24%),
+            radial-gradient(circle at right, rgba(34, 211, 238, 0.12), transparent 22%),
+            linear-gradient(135deg, #081120 0%, #0f172a 55%, #111827 100%);
+    
+        --login-hero-badge-bg: rgba(255, 255, 255, 0.08);
+        --login-hero-badge-text: #c9f6ff;
+    
+        --login-title: #f8fafc;
+        --login-copy: #cbd5e1;
+        --login-card-bg: rgba(15, 23, 42, 0.72);
+        --login-card-border: rgba(148, 163, 184, 0.16);
+        --login-card-shadow: 0 25px 60px rgba(0, 0, 0, 0.32);
+    
+        --login-eyebrow: #67e8f9;
+    
+        --login-persona-bg: rgba(15, 23, 42, 0.92);
+        --login-persona-border: rgba(148, 163, 184, 0.18);
+        --login-persona-title: #f8fafc;
+        --login-persona-copy: #94a3b8;
+        --login-persona-role: #67e8f9;
+        --login-persona-active-border: #22d3ee;
+        --login-persona-active-ring: 0 0 0 4px rgba(34, 211, 238, 0.14);
+    
+        --login-btn-bg: linear-gradient(135deg, #0891b2, #0f766e);
+        --login-btn-text: #ffffff;
+
+    --app-bg: #0b1220;
+    --page-bg: var(--app-bg);
+    --surface-primary: #111827;
+    --surface-secondary: #172033;
+    --text-primary: #f8fafc;
+    --text-secondary: #cbd5e1;
+    --text-muted: #94a3b8;
+    --input-text: #f8fafc;
+    --input-placeholder: #94a3b8;
+
+    --border-color: rgba(148, 163, 184, 0.14);
+    --border-strong: rgba(148, 163, 184, 0.26);
+
+    --shadow-sm: 0 8px 24px rgba(0, 0, 0, 0.24);
+    --shadow-md: 0 16px 40px rgba(0, 0, 0, 0.34);
+
+    --header-gradient:
+        radial-gradient(circle at top left, rgba(34, 211, 238, 0.14), transparent 32%),
+        linear-gradient(135deg, #0f172a 0%, #111827 55%, #1e293b 100%);
+
+    --card-glass: rgba(15, 23, 42, 0.72);
+
+    --role-bg: rgba(34, 211, 238, 0.14);
+    --role-border: rgba(34, 211, 238, 0.24);
+    --role-text: #a5f3fc;
+
+    /* Dashboard specific */
+    --dashboard-panel-bg: linear-gradient(180deg, #111827 0%, #172033 100%);
+    --dashboard-subtle-bg: #172033;
+    --dashboard-inner-border: rgba(148, 163, 184, 0.16);
+    --dashboard-feature-glow: rgba(34, 211, 238, 0.16);
+
+    --success-soft: rgba(34, 197, 94, 0.16);
+    --success-border: rgba(34, 197, 94, 0.24);
+
+    --warning-soft: rgba(245, 158, 11, 0.14);
+    --warning-border: rgba(245, 158, 11, 0.24);
+    --warning-text: #fbbf24;
+
+    --danger-soft: rgba(248, 113, 113, 0.14);
+    --danger-border: rgba(248, 113, 113, 0.24);
+
+    --info-soft: rgba(96, 165, 250, 0.14);
+    --info-border: rgba(96, 165, 250, 0.24);
+
+    /* Activity feed */
+    --pill-success-bg: rgba(20, 184, 166, 0.14);
+    --pill-success-border: rgba(45, 212, 191, 0.24);
+    --pill-success-text: #99f6e4;
+
+    --action-tile-hover-bg: #1e293b;
+
+    /* Revenue chart */
+    --chart-line: #22d3ee;
+    --chart-fill: rgba(34, 211, 238, 0.16);
+    --chart-point-bg: #e2e8f0;
+    --chart-point-border: #0f172a;
+    --chart-grid: rgba(148, 163, 184, 0.16);
+    --chart-tick: #94a3b8;
+    --chart-tooltip-bg: #111827;
+    --chart-tooltip-text: #f8fafc;
+    --chart-tooltip-border: rgba(148, 163, 184, 0.18);
+    --range-btn-text: #cbd5e1;
+    --range-btn-active-bg: #e2e8f0;
+    --range-btn-active-text: #0f172a;
+
+    /* Team performance table */
+    --table-heading: #94a3b8;
+    --table-row-border: rgba(148, 163, 184, 0.14);
+
+    --progress-track: #243244;
+    --progress-fill: linear-gradient(90deg, #22d3ee, #4ade80);
+    --kpi-trend-up: #4ade80;
+    --kpi-trend-down: #fbbf24;
+
+    /* Sidebar */
+    --sidebar-bg-top: #081120;
+    --sidebar-bg-mid: #0f172a;
+    --sidebar-bg-bottom: #111827;
+    --sidebar-text: #dbe7f3;
+    --sidebar-heading: #f8fbff;
+    --sidebar-text-muted: #8aa0b8;
+    --sidebar-text-soft: #94a9be;
+    --sidebar-group-title: #7f93a8;
+    --sidebar-eyebrow: #67e8f9;
+    --sidebar-border: rgba(148, 163, 184, 0.12);
+    --sidebar-divider: rgba(255, 255, 255, 0.03);
+    --sidebar-surface: rgba(255, 255, 255, 0.04);
+    --sidebar-surface-hover: rgba(255, 255, 255, 0.08);
+    --sidebar-elevated-surface: linear-gradient(180deg, rgba(255, 255, 255, 0.07), rgba(255, 255, 255, 0.04));
+    --sidebar-surface-border: rgba(148, 163, 184, 0.14);
+    --sidebar-nav-hover: rgba(255, 255, 255, 0.06);
+    --sidebar-nav-hover-border: rgba(148, 163, 184, 0.14);
+    --sidebar-nav-active-bg: linear-gradient(135deg, rgba(8, 145, 178, 0.24), rgba(34, 197, 94, 0.18));
+    --sidebar-nav-active-border: rgba(34, 211, 238, 0.28);
+    --sidebar-nav-active-inner: rgba(255, 255, 255, 0.03);
+    --sidebar-icon-bg: rgba(255, 255, 255, 0.06);
+    --sidebar-scroll-thumb: rgba(148, 163, 184, 0.2);
+    --sidebar-brand-start: #22c55e;
+    --sidebar-brand-end: #06b6d4;
+    --sidebar-brand-shadow: rgba(6, 182, 212, 0.22);
+    --sidebar-brand-border-hover: rgba(56, 189, 248, 0.3);
+    --sidebar-accent-glow-1: rgba(34, 197, 94, 0.16);
+    --sidebar-accent-glow-2: rgba(6, 182, 212, 0.16);
+    --sidebar-badge-bg: rgba(34, 197, 94, 0.16);
+    --sidebar-badge-text: #86efac;
+    --sidebar-cta-start: #0891b2;
+    --sidebar-cta-end: #0f766e;
+    --sidebar-avatar-start: #1e293b;
+    --sidebar-avatar-end: #334155;
+    --sidebar-action-bg: rgba(255, 255, 255, 0.05);
+}
+
+html,
+body {
+    min-height: 100%;
+    background: var(--page-bg);
+    color: var(--text-primary);
+    transition: background-color 0.25s ease, color 0.25s ease;
+}
+
+body {
+    margin: 0;
+    min-height: 100vh;
+}
+
+app-root {
+    display: block;
+    min-height: 100vh;
+    background: var(--page-bg);
+    color: var(--text-primary);
+}

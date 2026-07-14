@@ -5,7 +5,7 @@ import { ActivityItem } from '../../../../core/models/dashboard.model';
   selector: 'app-activity-feed',
   standalone: true,
   templateUrl: './activity-feed.component.html',
-  styleUrl: './activity-feed.component.scss'
+  styleUrls: ['./activity-feed.component.scss']
 })
 export class ActivityFeedComponent {
   readonly items = input.required<ActivityItem[]>();

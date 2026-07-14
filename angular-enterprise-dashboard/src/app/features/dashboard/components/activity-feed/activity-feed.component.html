@@ -6,9 +6,13 @@
     </div>
     <span class="pill">Auto-updated</span>
   </div>
+
   <div class="activity-list">
     @for (item of items(); track item.title) {
-      <article class="activity-item" [class.success]="item.tone === 'success'" [class.warning]="item.tone === 'warning'">
+      <article
+        class="activity-item"
+        [class.success]="item.tone === 'success'"
+        [class.warning]="item.tone === 'warning'">
         <div>
           <h4>{{ item.title }}</h4>
           <p>{{ item.description }}</p>

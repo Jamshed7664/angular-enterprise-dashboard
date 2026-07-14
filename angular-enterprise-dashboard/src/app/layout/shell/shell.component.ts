@@ -9,7 +9,7 @@ import { DashboardStore } from '../../core/store/dashboard.store';
   standalone: true,
   imports: [RouterOutlet, SidebarComponent, HeaderComponent],
   templateUrl: './shell.component.html',
-  styleUrl: './shell.component.scss'
+  styleUrls: ['./shell.component.scss']
 })
 export class ShellComponent {
   private readonly dashboardStore = inject(DashboardStore);

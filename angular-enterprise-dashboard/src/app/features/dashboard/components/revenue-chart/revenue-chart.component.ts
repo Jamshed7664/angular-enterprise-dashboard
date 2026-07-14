@@ -2,6 +2,7 @@ import { Component, computed, inject } from '@angular/core';
 import { BaseChartDirective } from 'ng2-charts';
 import { ChartConfiguration } from 'chart.js';
 import { DashboardStore } from '../../../../core/store/dashboard.store';
+import { ThemeService } from '../../../../core/services/theme.service';
 
 type RevenueRange = '7d' | '30d' | '90d';
 
@@ -14,11 +15,14 @@ type RevenueRange = '7d' | '30d' | '90d';
 })
 export class RevenueChartComponent {
   private readonly dashboardStore = inject(DashboardStore);
+  private readonly themeService = inject(ThemeService);
 
   readonly ranges = ['7d', '30d', '90d'] as const;
   readonly selectedRange = this.dashboardStore.selectedRange;
 
   readonly chartData = computed<ChartConfiguration<'line'>['data']>(() => {
+    this.themeService.activeTheme();
+
     const series = this.dashboardStore.revenueSeries();
 
     return {
@@ -29,10 +33,10 @@ export class RevenueChartComponent {
           label: 'Revenue momentum',
           tension: 0.35,
           fill: true,
-          borderColor: '#0891b2',
-          backgroundColor: 'rgba(8, 145, 178, 0.12)',
-          pointBackgroundColor: '#0f172a',
-          pointBorderColor: '#ffffff',
+          borderColor: this.getCssVar('--chart-line'),
+          backgroundColor: this.getCssVar('--chart-fill'),
+          pointBackgroundColor: this.getCssVar('--chart-point-bg'),
+          pointBorderColor: this.getCssVar('--chart-point-border'),
           pointBorderWidth: 2,
           pointRadius: 4,
           pointHoverRadius: 6
@@ -41,26 +45,50 @@ export class RevenueChartComponent {
     };
   });
 
-  readonly chartOptions: ChartConfiguration<'line'>['options'] = {
-    responsive: true,
-    maintainAspectRatio: false,
-    plugins: {
-      legend: { display: false }
-    },
-    scales: {
-      y: {
-        beginAtZero: true,
-        grid: { color: 'rgba(148, 163, 184, 0.18)' },
-        ticks: { color: '#64748b' }
+  readonly chartOptions = computed<ChartConfiguration<'line'>['options']>(() => {
+    this.themeService.activeTheme();
+
+    return {
+      responsive: true,
+      maintainAspectRatio: false,
+      plugins: {
+        legend: { display: false },
+        tooltip: {
+          backgroundColor: this.getCssVar('--chart-tooltip-bg'),
+          titleColor: this.getCssVar('--chart-tooltip-text'),
+          bodyColor: this.getCssVar('--chart-tooltip-text'),
+          borderColor: this.getCssVar('--chart-tooltip-border'),
+          borderWidth: 1,
+          displayColors: false
+        }
       },
-      x: {
-        grid: { display: false },
-        ticks: { color: '#64748b' }
+      scales: {
+        y: {
+          beginAtZero: true,
+          grid: {
+            color: this.getCssVar('--chart-grid')
+          },
+          ticks: {
+            color: this.getCssVar('--chart-tick')
+          }
+        },
+        x: {
+          grid: {
+            display: false
+          },
+          ticks: {
+            color: this.getCssVar('--chart-tick')
+          }
+        }
       }
-    }
-  };
+    };
+  });
 
   setRange(range: RevenueRange): void {
     this.dashboardStore.setRange(range);
+  }
+
+  private getCssVar(name: string): string {
+    return getComputedStyle(document.documentElement).getPropertyValue(name).trim();
   }
 }

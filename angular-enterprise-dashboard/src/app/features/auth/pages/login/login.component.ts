@@ -8,12 +8,14 @@ import { UserRole } from '../../../../core/models/user.model';
   standalone: true,
   imports: [CommonModule],
   templateUrl: './login.component.html',
-  styleUrl: './login.component.scss'
+  styleUrls: ['./login.component.scss']
 })
 export class LoginComponent {
   private readonly authStore = inject(AuthStore);
+
   readonly selectedRole = signal<UserRole>('admin');
-  readonly personas: { role: UserRole; title: string; description: string; }[] = [
+
+  readonly personas: { role: UserRole; title: string; description: string }[] = [
     { role: 'admin', title: 'Admin access', description: 'Manage platform policy, governance, and privileged workflows.' },
     { role: 'manager', title: 'Manager access', description: 'Review delivery metrics, team health, and revenue pacing.' },
     { role: 'analyst', title: 'Analyst access', description: 'Inspect trends, build reports, and monitor performance signals.' },
