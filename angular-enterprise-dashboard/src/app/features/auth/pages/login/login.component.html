@@ -1,0 +1,46 @@
+<div class="login-shell">
+  <section class="hero-copy">
+    <span class="hero-badge">Angular 19 • Signals • Standalone</span>
+    <h1>Build enterprise-grade dashboards with clear architecture and a polished UI.</h1>
+    <p>
+      This starter demonstrates authentication, role-based routes, lazy loaded pages, responsive Bootstrap styling,
+      reusable components, chart-driven insights, and signal-based state management.
+    </p>
+    <div class="feature-grid">
+      <article>
+        <h2>Clean architecture</h2>
+        <p>Core, shared, layout, and feature folders keep responsibilities easy to scale.</p>
+      </article>
+      <article>
+        <h2>Role-aware experience</h2>
+        <p>Admin-only routes, protected shell layout, and persona-based dashboards are ready to extend.</p>
+      </article>
+      <article>
+        <h2>Modern Angular patterns</h2>
+        <p>Standalone components, lazy loading, signals, functional guards, and functional interceptors.</p>
+      </article>
+    </div>
+  </section>
+
+  <section class="login-card">
+    <div class="card-header-block">
+      <p class="eyebrow">Demo access</p>
+      <h2>Choose a role to continue</h2>
+      <p>Each persona helps you verify route protection, shell behavior, and role-specific visibility.</p>
+    </div>
+
+    <div class="persona-list">
+      @for (persona of personas; track persona.role) {
+        <button type="button" class="persona-option" [class.active]="selectedRole() === persona.role" (click)="selectedRole.set(persona.role)">
+          <div>
+            <h3>{{ persona.title }}</h3>
+            <p>{{ persona.description }}</p>
+          </div>
+          <span>{{ persona.role }}</span>
+        </button>
+      }
+    </div>
+
+    <button type="button" class="btn btn-lg btn-primary w-100 login-btn" (click)="signIn()">Continue to dashboard</button>
+  </section>
+</div>

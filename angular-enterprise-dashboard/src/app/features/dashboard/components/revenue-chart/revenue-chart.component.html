@@ -1,0 +1,32 @@
+<section class="chart-card">
+  <div class="chart-topbar">
+    <div class="chart-heading">
+      <p class="eyebrow">Revenue intelligence</p>
+      <h3>Growth trend</h3>
+      <p class="chart-subtext">
+        Reactive chart updates powered by signals with quick time-range switching.
+      </p>
+    </div>
+
+    <div class="range-switcher">
+      @for (range of ranges; track range) {
+        <button
+          type="button"
+          class="range-btn"
+          [class.active]="selectedRange() === range"
+          (click)="setRange(range)">
+          {{ range }}
+        </button>
+      }
+    </div>
+  </div>
+
+  <div class="chart-shell">
+    <canvas
+      baseChart
+      [data]="chartData()"
+      [options]="chartOptions"
+      [type]="'line'">
+    </canvas>
+  </div>
+</section>

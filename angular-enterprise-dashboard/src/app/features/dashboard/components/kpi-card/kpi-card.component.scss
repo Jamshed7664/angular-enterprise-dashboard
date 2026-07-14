@@ -1,0 +1,34 @@
+.kpi-card {
+    background: #fff;
+    border-radius: 1.25rem;
+    padding: 1.1rem;
+    border: 1px solid rgba(148, 163, 184, .18);
+    box-shadow: 0 15px 35px rgba(15, 23, 42, .05);
+}
+
+.kpi-card p {
+    margin: 0 0 .75rem;
+    color: #475569;
+    font-weight: 600;
+}
+
+.kpi-card h3 {
+    margin: 0 0 .65rem;
+    color: #0f172a;
+    font-size: 1.8rem;
+}
+
+.delta-row {
+    display: flex;
+    flex-direction: column;
+    gap: .2rem;
+    color: #15803d;
+}
+
+.delta-row.down {
+    color: #b45309;
+}
+
+.delta-row small {
+    color: #64748b;
+}

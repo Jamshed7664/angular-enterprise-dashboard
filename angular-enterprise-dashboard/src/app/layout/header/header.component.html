@@ -1,0 +1,14 @@
+<header class="header-bar">
+  <div>
+    <p class="page-kicker">Enterprise visibility</p>
+    <h2>Welcome back, {{ currentUser()?.name }}</h2>
+  </div>
+  <div class="header-actions">
+    <div class="search-box">
+      <span>⌕</span>
+      <input type="text" placeholder="Search teams, reports, or alerts" />
+    </div>
+    <span class="role-pill">{{ roleLabel() }}</span>
+    <button class="btn btn-outline-light action-btn" type="button" (click)="logout()">Logout</button>
+  </div>
+</header>

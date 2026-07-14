@@ -1,0 +1,40 @@
+<section class="panel-card">
+  <div class="section-head">
+    <div>
+      <p class="eyebrow">Execution quality</p>
+      <h3>Team performance</h3>
+    </div>
+    <button type="button" class="btn btn-sm btn-outline-secondary">Export CSV</button>
+  </div>
+
+  <div class="table-responsive">
+    <table class="table align-middle mb-0">
+      <thead>
+        <tr>
+          <th>Team</th>
+          <th>Owner</th>
+          <th>Completion</th>
+          <th>Revenue</th>
+        </tr>
+      </thead>
+      <tbody>
+        @for (team of teams(); track team.team) {
+          <tr>
+            <td>
+              <strong>{{ team.team }}</strong>
+              <div class="text-muted small">Cross-functional operating initiative</div>
+            </td>
+            <td>{{ team.owner }}</td>
+            <td>
+              <div class="progress progress-slim">
+                <div class="progress-bar" [style.width.%]="team.completion"></div>
+              </div>
+              <small>{{ team.completion }}% complete</small>
+            </td>
+            <td>{{ team.revenue }}</td>
+          </tr>
+        }
+      </tbody>
+    </table>
+  </div>
+</section>

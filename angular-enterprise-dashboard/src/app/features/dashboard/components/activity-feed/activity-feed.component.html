@@ -1,0 +1,20 @@
+<section class="panel-card h-100">
+  <div class="section-head">
+    <div>
+      <p class="eyebrow">Live operations</p>
+      <h3>Recent activity</h3>
+    </div>
+    <span class="pill">Auto-updated</span>
+  </div>
+  <div class="activity-list">
+    @for (item of items(); track item.title) {
+      <article class="activity-item" [class.success]="item.tone === 'success'" [class.warning]="item.tone === 'warning'">
+        <div>
+          <h4>{{ item.title }}</h4>
+          <p>{{ item.description }}</p>
+        </div>
+        <span>{{ item.time }}</span>
+      </article>
+    }
+  </div>
+</section>

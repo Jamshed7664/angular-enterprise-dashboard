@@ -1,0 +1,142 @@
+<aside class="sidebar-panel" [class.collapsed]="collapsed()">
+  <div class="sidebar-top">
+    <div class="brand-block">
+      <button
+        class="brand-toggle"
+        type="button"
+        (click)="toggleSidebar()"
+        [attr.aria-label]="collapsed() ? 'Expand sidebar' : 'Collapse sidebar'"
+      >
+        <span class="brand-mark">
+          <span class="brand-mark-inner">A</span>
+        </span>
+
+        @if (!collapsed()) {
+          <div class="brand-copy">
+            <h1>AxionOps</h1>
+            <p>Enterprise command center</p>
+          </div>
+        }
+
+        <span class="toggle-icon" aria-hidden="true">
+          {{ collapsed() ? '→' : '←' }}
+        </span>
+      </button>
+    </div>
+
+    @if (!collapsed()) {
+      <div class="workspace-card">
+        <p class="eyebrow">Workspace</p>
+        <h2>North Star Operations</h2>
+        <p>Track delivery, revenue momentum, renewal health, and executive priorities from one control surface.</p>
+      </div>
+    }
+  </div>
+
+  <nav class="sidebar-nav" aria-label="Primary navigation">
+    <div class="nav-group">
+      @if (!collapsed()) {
+        <p class="nav-group-title">Main</p>
+      }
+
+      <a
+        routerLink="/dashboard"
+        routerLinkActive="active"
+        [routerLinkActiveOptions]="{ exact: true }"
+        class="nav-item"
+      >
+        <span class="nav-icon">📊</span>
+        @if (!collapsed()) {
+          <span class="nav-copy">
+            <strong>Dashboard</strong>
+            <small>Overview and performance</small>
+          </span>
+        }
+      </a>
+
+      <a routerLink="/reports" routerLinkActive="active" class="nav-item">
+        <span class="nav-icon">📁</span>
+        @if (!collapsed()) {
+          <span class="nav-copy">
+            <strong>Reports</strong>
+            <small>Exports and board packs</small>
+          </span>
+        }
+      </a>
+
+      <a routerLink="/teams" routerLinkActive="active" class="nav-item">
+        <span class="nav-icon">👥</span>
+        @if (!collapsed()) {
+          <span class="nav-copy">
+            <strong>Teams</strong>
+            <small>Capacity and ownership</small>
+          </span>
+        }
+      </a>
+    </div>
+
+    <div class="nav-group">
+      @if (!collapsed()) {
+        <p class="nav-group-title">Governance</p>
+      }
+
+      @if (isAdmin()) {
+        <a routerLink="/admin" routerLinkActive="active" class="nav-item">
+          <span class="nav-icon">🛡️</span>
+          @if (!collapsed()) {
+            <span class="nav-copy">
+              <strong>Admin control</strong>
+              <small>Roles, policy, and access</small>
+            </span>
+          }
+        </a>
+      }
+
+      <a routerLink="/settings" routerLinkActive="active" class="nav-item">
+        <span class="nav-icon">⚙️</span>
+        @if (!collapsed()) {
+          <span class="nav-copy">
+            <strong>Settings</strong>
+            <small>Preferences and configuration</small>
+          </span>
+        }
+      </a>
+    </div>
+
+    @if (!collapsed()) {
+      <div class="insight-card">
+        <div class="insight-head">
+          <p class="eyebrow">Quarter focus</p>
+          <span class="insight-badge">+12.4%</span>
+        </div>
+        <h3>Retention uplift</h3>
+        <p>Customer success squads are coordinating onboarding quality, adoption depth, and renewal risk signals in one shared workflow.</p>
+        <button type="button" class="insight-btn">Open initiative</button>
+      </div>
+    }
+  </nav>
+
+  <div class="sidebar-bottom">
+    @if (!collapsed()) {
+      <button type="button" class="support-link">
+        <span>❔</span>
+        <span>Help center</span>
+      </button>
+    }
+
+    <div class="profile-panel" *ngIf="currentUser() as user">
+      <div class="avatar">{{ user.avatar }}</div>
+
+      @if (!collapsed()) {
+        <div class="profile-copy">
+          <h3>{{ user.name }}</h3>
+          <p>{{ user.title }}</p>
+        </div>
+      }
+
+      @if (!collapsed()) {
+        <button type="button" class="profile-action" aria-label="Open profile menu">⋯</button>
+      }
+    </div>
+  </div>
+</aside>

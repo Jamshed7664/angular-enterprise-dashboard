@@ -1,0 +1,142 @@
+<div class="dashboard-overview">
+  <app-page-header
+    eyebrow="Executive dashboard"
+    title="Operations and revenue command center"
+    description="This overview combines KPI storytelling, reactive charts, activity signals, delivery health, and work queues so teams can review outcomes and act without changing context.">
+  </app-page-header>
+
+  <section class="executive-strip">
+    <article class="summary-card featured">
+      <div class="summary-copy">
+        <p class="eyebrow">Performance pulse</p>
+        <h2>Revenue is pacing ahead of target while delivery risk stays controlled.</h2>
+        <p>Finance, success, and delivery teams are aligned around the same weekly view, reducing reporting lag and improving decision speed.</p>
+      </div>
+      <div class="summary-stats">
+        <div>
+          <span class="stat-label">Forecast accuracy</span>
+          <strong>94.8%</strong>
+        </div>
+        <div>
+          <span class="stat-label">Renewal health</span>
+          <strong>Stable</strong>
+        </div>
+      </div>
+    </article>
+
+    <article class="summary-card compact">
+      <p class="eyebrow">Watchlist</p>
+      <h3>3 accounts need leadership review</h3>
+      <p>Escalations are concentrated in onboarding and expansion follow-through.</p>
+    </article>
+
+    <article class="summary-card compact">
+      <p class="eyebrow">Execution</p>
+      <h3>8 initiatives active this quarter</h3>
+      <p>Platform, support, and customer success streams are moving in parallel.</p>
+    </article>
+  </section>
+
+  <section class="kpi-grid">
+    @for (card of dashboardStore.kpiCards(); track card.title) {
+      <app-kpi-card [card]="card"></app-kpi-card>
+    }
+  </section>
+
+  <section class="primary-grid">
+    <div class="primary-main">
+      <app-revenue-chart></app-revenue-chart>
+    </div>
+
+    <div class="primary-side">
+      <app-activity-feed [items]="dashboardStore.recentActivities()"></app-activity-feed>
+    </div>
+  </section>
+
+  <section class="priorities-panel mini-panel full-width-panel">
+    <div class="mini-panel-head">
+      <div>
+        <p class="eyebrow">Operational status</p>
+        <h3>Today’s priorities</h3>
+      </div>
+      <span class="status-dot"></span>
+    </div>
+
+    <div class="priority-list priority-list-wide">
+      <article class="priority-item">
+        <strong>Board pack refresh</strong>
+        <p>Update revenue narrative and attach latest variance notes before 5 PM.</p>
+      </article>
+      <article class="priority-item">
+        <strong>Renewal escalation review</strong>
+        <p>Coordinate with success leads on at-risk enterprise accounts.</p>
+      </article>
+      <article class="priority-item">
+        <strong>Delivery staffing sync</strong>
+        <p>Confirm bandwidth for two high-priority implementation programs.</p>
+      </article>
+    </div>
+  </section>
+
+  <section class="operations-grid">
+    <div class="operations-main">
+      <app-team-performance [teams]="dashboardStore.teamPerformance()"></app-team-performance>
+    </div>
+
+    <aside class="operations-side">
+      <section class="mini-panel">
+        <div class="mini-panel-head">
+          <div>
+            <p class="eyebrow">Risk monitor</p>
+            <h3>Critical blockers</h3>
+          </div>
+          <span class="pill-alert">3 open</span>
+        </div>
+
+        <div class="risk-list">
+          <article class="risk-item danger">
+            <strong>Delayed onboarding milestone</strong>
+            <p>Enterprise rollout is behind target due to dependency approvals.</p>
+          </article>
+          <article class="risk-item warning">
+            <strong>Expansion proposal pending</strong>
+            <p>Commercial follow-up is waiting for pricing confirmation and exec review.</p>
+          </article>
+          <article class="risk-item info">
+            <strong>Support capacity tightness</strong>
+            <p>Weekend coverage needs temporary redistribution across regions.</p>
+          </article>
+        </div>
+      </section>
+    </aside>
+  </section>
+
+  <section class="bottom-grid">
+    <app-quick-actions></app-quick-actions>
+
+    <section class="mini-panel milestones-panel">
+      <div class="mini-panel-head">
+        <div>
+          <p class="eyebrow">Delivery calendar</p>
+          <h3>Upcoming milestones</h3>
+        </div>
+        <button type="button" class="btn btn-sm btn-outline-secondary">View all</button>
+      </div>
+
+      <div class="milestone-list">
+        <article class="milestone-item">
+          <strong>QBR deck finalization</strong>
+          <span>Tomorrow • 11:00 AM</span>
+        </article>
+        <article class="milestone-item">
+          <strong>Enterprise rollout checkpoint</strong>
+          <span>Wednesday • 2:30 PM</span>
+        </article>
+        <article class="milestone-item">
+          <strong>Renewal steering review</strong>
+          <span>Friday • 4:00 PM</span>
+        </article>
+      </div>
+    </section>
+  </section>
+</div>
