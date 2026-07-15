@@ -26,6 +26,7 @@ The dashboard is designed to be extended easily with REST APIs, authentication p
 **Dashboard**
 
 **Desktop Dashboard**
+
 <img width="991" height="517" alt="image" src="https://github.com/user-attachments/assets/e13741a6-b225-4e89-9db8-8d1c52d57212" />
 
 
@@ -55,9 +56,11 @@ The application header provides quick access to the most frequently used user ac
 
 **Screenshots**
 
+
 **Header**
 
 <img width="991" height="106" alt="image" src="https://github.com/user-attachments/assets/71412770-0e49-4164-b657-643067f040ed" />
+
 
 
 **Notification Panel**
@@ -65,14 +68,17 @@ The application header provides quick access to the most frequently used user ac
 <img width="991" height="513" alt="image" src="https://github.com/user-attachments/assets/d8a55d64-ba2d-41f9-85ad-4726e23fa8c7" />
 
 
+
 **Profile Dropdown**
 
 <img width="991" height="502" alt="image" src="https://github.com/user-attachments/assets/4b43cf0d-cdcd-4ea5-a8b0-64960ddb7299" />
 
 
+
 **👤 Profile Management**
 
 The dashboard contains a complete profile management experience where users can update their personal information, workspace preferences, and security settings.
+
 
 **Profile Overview**
 
@@ -86,6 +92,7 @@ Includes:
 - Role
 - Location
 - Security badge
+
 
 **Screenshot**
 
@@ -102,9 +109,11 @@ Editable fields include:
 - Location
 - Bio
 
+
 **Screenshot**
 
 <img width="991" height="656" alt="image" src="https://github.com/user-attachments/assets/614626b1-9ab1-4fb9-8177-7ee2e7824802" />
+
 
 
 **Workspace Preferences**
@@ -116,9 +125,11 @@ Available options include:
 - Weekly Digest
 - Two-Factor Authentication
 
+
 **Screenshot**
 
 <img width="991" height="634" alt="image" src="https://github.com/user-attachments/assets/6d8d3a6b-8937-4f5d-a28a-bf57b63b4132" />
+
 
 
 **Security**
@@ -131,14 +142,17 @@ Password management includes:
 - Password validation
 - Success state
 
+
 **Screenshot**
 
 <img width="991" height="662" alt="image" src="https://github.com/user-attachments/assets/993cb062-088d-4b38-bb1d-3e6fdc11650c" />
 
 
+
 **🌗 Theme Support**
 
 The application supports complete Light and Dark themes using reusable CSS Variables.
+
 
 **Features**
 
@@ -148,11 +162,14 @@ The application supports complete Light and Dark themes using reusable CSS Varia
 - Easy maintenance
 - Component-level compatibility
 
+
 **Screenshots**
+
 
 **Light Theme**
 
 <img width="991" height="510" alt="image" src="https://github.com/user-attachments/assets/1029a8e4-a80e-4bd9-8924-226a52a1a0ff" />
+
 
 
 **Dark Theme**
@@ -160,9 +177,11 @@ The application supports complete Light and Dark themes using reusable CSS Varia
 <img width="991" height="510" alt="image" src="https://github.com/user-attachments/assets/25e7d131-0aa7-4651-90b2-264c88a20dfe" />
 
 
+
 **📝 Reactive Forms**
 
 Angular Reactive Forms power the profile and security sections.
+
 
 **Features**
 
@@ -178,11 +197,13 @@ Angular Reactive Forms power the profile and security sections.
 <img width="991" height="704" alt="image" src="https://github.com/user-attachments/assets/fe3e0d6f-ad56-4791-94f6-50a6c8e527cc" />
 
 
+
 **👥 User Command Center**
 
 The User Command Center provides a modern enterprise interface for managing platform users, roles, and account status.
 
 It follows the design principles used in enterprise SaaS products while remaining modular and easy to extend.
+
 
 **✨ Features**
 
@@ -197,11 +218,13 @@ It follows the design principles used in enterprise SaaS products while remainin
 - 🗑 Delete Users
 - 📱 Responsive Design
 
+
 **📸 User Command Center**
 
 **Full Page**
 
 <img width="991" height="512" alt="image" src="https://github.com/user-attachments/assets/c1de4517-09ac-47ff-8874-172ffda91a12" />
+
 
 
 **🔍 Advanced Search**
@@ -218,6 +241,7 @@ Search users by:
 <img width="991" height="534" alt="image" src="https://github.com/user-attachments/assets/350782ba-0a6d-4cc6-b8ef-89a6dabb2b63" />
 
 
+
 **🎯 Role Filter**
 
 Available roles:
@@ -232,6 +256,7 @@ Available roles:
 <img width="991" height="510" alt="image" src="https://github.com/user-attachments/assets/921b5c52-63ec-49c2-99ab-b8501749656e" />
 
 
+
 **✅ Status Filter**
 
 Supports:
@@ -243,11 +268,14 @@ Includes:
 
 - Reset Filters
 
+
 **Screenshot**
+
 
 **Active :**
 
 <img width="991" height="523" alt="image" src="https://github.com/user-attachments/assets/5322b403-7115-4e2e-ae5a-a310048d3996" />
+
 
 
 **Inactive :**
@@ -255,9 +283,11 @@ Includes:
 <img width="991" height="510" alt="image" src="https://github.com/user-attachments/assets/cad69e2c-3895-41e7-81f6-3c27217919e2" />
 
 
+
 **Reset :**
 
 <img width="991" height="510" alt="image" src="https://github.com/user-attachments/assets/48102ddd-20d6-404f-a549-96f66de8f5f4" />
+
 
 
 **📊 Summary Cards**
@@ -273,6 +303,7 @@ Displays:
 <img width="991" height="421" alt="image" src="https://github.com/user-attachments/assets/372bf21a-42b5-40a9-9d70-51f5b7da8712" />
 
 
+
 **👤 Enterprise User Directory**
 
 Each row displays:
@@ -285,9 +316,11 @@ Each row displays:
 - Status
 - Last Activity
 
+
 **Screenshot**
 
 <img width="991" height="514" alt="image" src="https://github.com/user-attachments/assets/e44b3f52-bb12-4ae8-85b5-64a221e825c2" />
+
 
 
 **✏️ Row Actions**
@@ -302,9 +335,11 @@ Available actions:
 <img width="991" height="516" alt="image" src="https://github.com/user-attachments/assets/5a657fe5-7408-4441-b4ef-83fa64e22f66" />
 
 
+
 **🏗 Architecture**
 
 Built using modern Angular best practices.
+
 
 **Highlights**
 
@@ -317,11 +352,13 @@ Built using modern Angular best practices.
 - Modular Design
 - Enterprise UI Patterns
 
+
 **📂 Suggested Folder Structure**
 
 <img width="991" height="568" alt="image" src="https://github.com/user-attachments/assets/d15119c3-0e14-45bf-8f40-b330f85e26b1" />
 <img width="991" height="585" alt="image" src="https://github.com/user-attachments/assets/419e5d1a-ec0f-4562-9279-2dee52e4e846" />
 <img width="991" height="330" alt="image" src="https://github.com/user-attachments/assets/94abe09f-0353-4c99-a171-6204e7703c0d" />
+
 
 
 **🛠 Technologies Used**
@@ -347,6 +384,7 @@ Built using modern Angular best practices.
 **Bootstrap**
 
 **Font Awesome**
+
 
 
 **🚀 Getting Started**
