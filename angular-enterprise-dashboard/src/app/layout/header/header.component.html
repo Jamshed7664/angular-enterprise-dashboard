@@ -5,9 +5,11 @@
   </div>
 
   <div class="header-actions">
-    <div class="search-box">
-      <span class="search-icon">⌕</span>
-      <input type="text" placeholder="Search teams, reports, or alerts" />
+    <div class="search-wrap">
+      <div class="search-box">
+        <span class="search-icon">⌕</span>
+        <input type="text" placeholder="Search teams, reports, or alerts" />
+      </div>
     </div>
 
     <div class="topbar-utilities">
@@ -24,12 +26,23 @@
 
       <span class="role-pill">{{ roleLabel() }}</span>
 
-      <button
-        class="btn action-btn logout-btn"
-        type="button"
-        (click)="logout()">
-        Logout
-      </button>
+      <div class="profile-menu-shell">
+        <button type="button" class="profile-trigger" (click)="toggleProfileMenu()">
+          <span class="profile-avatar">{{ initials() }}</span>
+          <span class="profile-copy">
+            <strong>{{ displayName() }}</strong>
+          </span>
+          <span class="profile-caret">▾</span>
+        </button>
+
+        @if (profileMenuOpen()) {
+          <div class="profile-menu">
+            <a routerLink="/profile" class="menu-item" (click)="closeProfileMenu()">My profile</a>
+            <button type="button" class="menu-item" (click)="toggleTheme()">Toggle theme</button>
+            <button type="button" class="menu-item danger" (click)="logout()">Logout</button>
+          </div>
+        }
+      </div>
     </div>
   </div>
 </header>

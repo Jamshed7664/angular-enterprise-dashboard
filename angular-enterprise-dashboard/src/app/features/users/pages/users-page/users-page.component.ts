@@ -52,10 +52,12 @@ export class UsersPageComponent {
   }
 
   loadUsers(): void {
+    const searchText = (this.filtersForm.value.search ?? '').trim().toLowerCase();
+
     const query: UserQueryParams = {
-      page: this.page(),
-      limit: this.limit(),
-      search: this.filtersForm.value.search ?? '',
+      page: searchText ? 1 : this.page(),
+      limit: searchText ? 1000 : this.limit(),
+      search: '',
       role: this.filtersForm.value.role ?? '',
       status: this.filtersForm.value.status ?? ''
     };
@@ -63,8 +65,17 @@ export class UsersPageComponent {
     this.loading.set(true);
     this.usersService.getUsers(query).subscribe({
       next: ({ data, total }) => {
-        this.users.set(data);
-        this.totalUsers.set(total);
+        const filteredData = !searchText
+          ? data
+          : data.filter(user =>
+            user.name.toLowerCase().includes(searchText) ||
+            user.email.toLowerCase().includes(searchText) ||
+            user.role.toLowerCase().includes(searchText) ||
+            user.team.toLowerCase().includes(searchText)
+          );
+
+        this.users.set(filteredData);
+        this.totalUsers.set(searchText ? filteredData.length : total);
         this.loading.set(false);
       },
       error: () => this.loading.set(false)

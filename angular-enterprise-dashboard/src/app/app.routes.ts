@@ -23,6 +23,11 @@ path: 'login',
         loadChildren: () => import('./features/users/users.routes').then(m => m.USERS_ROUTES)
       },
       {
+        path: 'profile',
+        loadChildren: () =>
+          import('./features/profile/profile.routes').then(m => m.PROFILE_ROUTES)
+      },
+      {
         path: 'admin',
         canActivate: [roleGuard],
         data: { roles: ['admin'] },

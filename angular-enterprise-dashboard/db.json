@@ -7,7 +7,7 @@
       "role": "admin",
       "team": "Platform Ops",
       "title": "Director of Operations",
-      "status": "active",
+      "status": "inactive",
       "lastActive": "2026-07-10",
       "avatar": "AS"
     },
@@ -113,7 +113,7 @@
     {
       "name": "Jamshed ",
       "email": "jamshed7664@gmail.com",
-      "role": "manager",
+      "role": "developer",
       "team": "Platform ops",
       "title": "Operation manager",
       "status": "active",

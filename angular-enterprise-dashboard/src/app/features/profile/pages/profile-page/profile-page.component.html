@@ -1,0 +1,198 @@
+<section class="profile-page">
+  <div class="profile-hero">
+    <div class="hero-copy">
+      <p class="eyebrow">Account center</p>
+      <h1>Profile and preferences</h1>
+      <p>
+        Review your identity details, update contact information, and manage
+        workspace settings from one polished workspace.
+      </p>
+    </div>
+
+    <button
+      type="button"
+      class="primary-btn"
+      (click)="saveProfile()"
+      [disabled]="saving()">
+      {{ saving() ? 'Saving...' : 'Save profile' }}
+    </button>
+  </div>
+
+  <div class="profile-layout">
+    <aside class="profile-summary card-panel">
+      <div class="profile-badge">{{ initials() }}</div>
+      <h2>{{ profileForm.value.name }}</h2>
+      <p class="profile-role">{{ profileForm.value.title }}</p>
+
+      <div class="profile-meta">
+        <div>
+          <span>Team</span>
+          <strong>{{ profileForm.value.team }}</strong>
+        </div>
+        <div>
+          <span>Email</span>
+          <strong>{{ profileForm.value.email }}</strong>
+        </div>
+        <div>
+          <span>Location</span>
+          <strong>{{ profileForm.value.location }}</strong>
+        </div>
+      </div>
+
+      <div class="account-health">
+        <div class="health-item">
+          <span class="health-label">Security</span>
+          <strong>Strong</strong>
+        </div>
+        <div class="health-item">
+          <span class="health-label">2FA</span>
+          <strong>Enabled</strong>
+        </div>
+      </div>
+    </aside>
+
+    <div class="profile-content">
+      <section class="card-panel">
+        <div class="section-head">
+          <div>
+            <p class="eyebrow">Personal details</p>
+            <h2>Profile information</h2>
+          </div>
+
+          @if (saved()) {
+            <span class="status-chip">Saved</span>
+          }
+        </div>
+
+        <form
+          class="profile-form"
+          [formGroup]="profileForm"
+          (ngSubmit)="saveProfile()">
+          <label class="field">
+            <span>Full name</span>
+            <input type="text" formControlName="name" />
+          </label>
+
+          <label class="field">
+            <span>Email address</span>
+            <input type="email" formControlName="email" />
+          </label>
+
+          <label class="field">
+            <span>Role title</span>
+            <input type="text" formControlName="title" />
+          </label>
+
+          <label class="field">
+            <span>Team</span>
+            <input type="text" formControlName="team" />
+          </label>
+
+          <label class="field">
+            <span>Phone</span>
+            <input type="text" formControlName="phone" />
+          </label>
+
+          <label class="field">
+            <span>Location</span>
+            <input type="text" formControlName="location" />
+          </label>
+
+          <label class="field full-span">
+            <span>Bio</span>
+            <textarea rows="4" formControlName="bio"></textarea>
+          </label>
+        </form>
+      </section>
+
+      <section class="card-panel split-panel">
+        <div>
+          <div class="section-head compact">
+            <div>
+              <p class="eyebrow">Preferences</p>
+              <h2>Workspace settings</h2>
+            </div>
+          </div>
+
+          <form class="toggle-list" [formGroup]="preferenceForm">
+            <label class="toggle-row">
+              <div>
+                <strong>Email alerts</strong>
+                <p>Receive activity alerts for user access and status changes.</p>
+              </div>
+              <input type="checkbox" formControlName="emailAlerts" />
+            </label>
+
+            <label class="toggle-row">
+              <div>
+                <strong>Weekly digest</strong>
+                <p>Get an operations summary every week.</p>
+              </div>
+              <input type="checkbox" formControlName="weeklyDigest" />
+            </label>
+
+            <label class="toggle-row">
+              <div>
+                <strong>Product updates</strong>
+                <p>Receive release notes and feature announcements.</p>
+              </div>
+              <input type="checkbox" formControlName="productUpdates" />
+            </label>
+
+            <label class="toggle-row">
+              <div>
+                <strong>Two-factor authentication</strong>
+                <p>Add a second security layer for login verification.</p>
+              </div>
+              <input type="checkbox" formControlName="twoFactor" />
+            </label>
+          </form>
+        </div>
+
+        <div>
+          <div class="section-head compact">
+            <div>
+              <p class="eyebrow">Security</p>
+              <h2>Update password</h2>
+            </div>
+
+            @if (securitySaved()) {
+              <span class="status-chip">Updated</span>
+            }
+          </div>
+
+          <form
+            class="security-form"
+            [formGroup]="securityForm"
+            (ngSubmit)="updateSecurity()">
+            <label class="field">
+              <span>Current password</span>
+              <input type="password" formControlName="currentPassword" />
+            </label>
+
+            <label class="field">
+              <span>New password</span>
+              <input type="password" formControlName="newPassword" />
+            </label>
+
+            <label class="field">
+              <span>Confirm password</span>
+              <input type="password" formControlName="confirmPassword" />
+            </label>
+
+            @if (passwordMismatch()) {
+              <p class="error-text">New password and confirm password must match.</p>
+            }
+
+            <button
+              type="submit"
+              class="primary-btn secondary-save"
+              [disabled]="securitySaving()">
+              {{ securitySaving() ? 'Updating...' : 'Update password' }}
+            </button>
+          </form>
+        </div>
+      </section>
+    </div>
+  </div>
+</section>
